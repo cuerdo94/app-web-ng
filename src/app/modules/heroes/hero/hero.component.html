@@ -1,0 +1,17 @@
+<dl>
+  <dt>Nombre</dt>
+  <dd>{{name}}</dd>
+  <dt>Edad</dt>
+  <dd>{{age}}</dd>
+  <dt>Metodo</dt>
+  <dd>{{getHeroDescription()}}</dd>
+  <dt>Capitalizacion</dt>
+  <dd>{{capitelizedName}}</dd>
+  <div class="d-grid gap-2 d-md-block">
+    <button *ngIf="true" (click)="changeName()" class="btn btn-primary me-2" type="button">
+      Cambiar nombre
+    </button>
+    <button *ngIf="age <40" (click)="changeAge()" class="btn btn-danger" type="button">Cambiar Edad</button>
+  </div>
+
+</dl>
