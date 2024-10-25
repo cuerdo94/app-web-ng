@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Listado</h4>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <li *ngFor="let charact of list; index as i; first as isFirst;last  as isLast" class="list-group-item" [ngClass]="{
+        'list-group-item-primary': isFirst,
+        'list-group-item-dark': isLast,
+      }">
+        {{i+1}}.
+        {{charact.name}} - {{charact.power}}
+      </li>
+    </ul>
+  </div>
+</div>
