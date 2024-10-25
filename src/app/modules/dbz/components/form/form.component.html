@@ -10,13 +10,15 @@
       <div class="mb-3 row">
         <label for="nombre" class="col-4 col-form-label">Nombre</label>
         <div class="col-8">
-          <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" />
+          <input [(ngModel)]="charact.name" type="text" class="form-control" name="nombre" id="nombre"
+            placeholder="Nombre" />
         </div>
       </div>
       <div class="mb-3 row">
         <label for="poder" class="col-4 col-form-label">Poder</label>
         <div class="col-8">
-          <input type="number" class="form-control" name="poder" id="poder" placeholder="Poder" />
+          <input [(ngModel)]="charact.power" type="number" class="form-control" name="poder" id="poder"
+            placeholder="Poder" />
         </div>
       </div>
 
@@ -27,6 +29,8 @@
           </button>
         </div>
       </div>
+      <pre>{{charact | json}}</pre>
+
     </form>
   </div>
 </div>
