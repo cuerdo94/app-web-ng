@@ -1,1 +1,28 @@
-<p>list works!</p>
+<div class="card" aria-hidden="true">
+  <div class="card-header">
+    <h5 class="card-title">Card title</h5>
+    <div class="d-flex justify-content-end">
+      <div>
+        <button *ngIf="heros.length != 0 else nothing" (click)="deleteElement()" type="button"
+          class="btn btn-danger">Eliminar
+          ultimo</button>
+        <ng-template #nothing>
+          <button disabled type="button" class="btn btn-danger">No hay Acción</button>
+        </ng-template>
+
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div *ngFor="let hero of heros" class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Heroe</h3>
+            <p class="card-text">{{hero}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
