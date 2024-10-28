@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'gifs-search',
@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
       name="filter-gif"
       id="filter-gif"
       placeholder="Gifs..."
-      (keyup.enter)="searchGif(filtergif.value)"
+      (keyup.enter)="searchGif()"
       #filtergif
     />
   </div>
@@ -21,8 +21,11 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
-  public searchGif(search: string): void {
-    console.log(search);
+  @ViewChild("filtergif")
+  public inputFiltergif!: ElementRef<HTMLInputElement>;
+
+  public searchGif(): void {
+    console.log(this.inputFiltergif.nativeElement.value);
   }
 
 }
