@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 
@@ -12,6 +12,14 @@ export class FormComponent {
   charact: Character = {
     name: '',
     power: 0
+  }
+  @Output()
+  onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
+
+  submitForm(): void {
+    console.log(this.charact);
+    this.onNewCharacter.emit(this.charact);
   }
 
 }
