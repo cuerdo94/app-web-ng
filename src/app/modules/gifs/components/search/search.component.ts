@@ -12,11 +12,17 @@ import { Component } from '@angular/core';
       name="filter-gif"
       id="filter-gif"
       placeholder="Gifs..."
+      (keyup.enter)="searchGif(filtergif.value)"
+      #filtergif
     />
   </div>
   `,
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
+
+  public searchGif(search: string): void {
+    console.log(search);
+  }
 
 }
