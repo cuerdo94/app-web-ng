@@ -14,8 +14,15 @@ export class ListComponent {
   @Output()
   onDeleteEvent: EventEmitter<number> = new EventEmitter<number>();
 
+  @Output()
+  onDeleteUUIDEvent: EventEmitter<string> = new EventEmitter<string>();
+
   onDelete(i: number): void {
     console.log(i)
     this.onDeleteEvent.emit(i)
+  }
+
+  onDeleteByUi(uuid: string): void {
+    this.onDeleteUUIDEvent.emit(uuid);
   }
 }

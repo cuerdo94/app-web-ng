@@ -13,9 +13,14 @@
             {{i+1}}.
             {{charact.name}} - {{charact.power}}
           </div>
-          <button type="button" class="btn btn-danger btn-sm" (click)="onDelete(i)">
-            x
-          </button>
+                  <div class="d-grid gap-2 d-md-block">
+            <button type="button" class="btn btn-danger btn-sm me-md-2" (click)="onDelete(i)">
+              Delete indice
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteByUi(charact.ui!)">
+              Delete ui
+            </button>
+          </div>
 
         </div>
       </li>

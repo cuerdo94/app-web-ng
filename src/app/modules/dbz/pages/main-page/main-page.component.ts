@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
+import { DBZService } from '../../services/dbz.service';
 
 @Component({
   selector: 'app-dbz-main-page',
@@ -7,20 +8,23 @@ import { Character } from '../../interfaces/character.interface';
   styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
-  characters: Character[] = [
-    { name: 'Goku', power: 100 },
-    { name: 'Vegeta', power: 120 },
-    { name: 'Trunks', power: 150 }
 
-  ]
+  constructor(private dbzService: DBZService) {
+
+  }
+
+  get characters(): Character[] {
+    return this.dbzService.characters;
+  }
+  
   onDelete(i: number) {
-    console.log("Main " + i);
-    this.characters.splice(i, 1); 
+    this.dbzService.onDelete(i);
   };
 
   onNewCharacter(character: Character) {
-
-    this.characters.push(character);
+    this.dbzService.onNewCharacter(character);
   }
-
+  onDeleteUUID(uuid: string) {
+    this.dbzService.onDeleteUUID(uuid!);
+  }
 }
