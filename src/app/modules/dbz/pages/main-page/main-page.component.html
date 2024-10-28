@@ -6,7 +6,7 @@
   <h3>Personajes</h3>
   <hr>
   <div class="col-6">
-    <dbz-list [list]="characters"></dbz-list>
+    <dbz-list [list]="characters" (onDeleteEvent)="onDelete($event)"></dbz-list>
   </div>
 
   <div class="col-6">

@@ -13,6 +13,11 @@ export class MainPageComponent {
     { name: 'Trunks', power: 150 }
 
   ]
+  onDelete(i: number) {
+    console.log("Main " + i);
+    this.characters.splice(i, 1); 
+  };
+
   onNewCharacter(character: Character) {
 
     this.characters.push(character);
