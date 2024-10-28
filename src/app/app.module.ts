@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CounterModule } from './modules/counter/counter.module';
 import { HeroesModule } from './modules/heroes/heroes.module';
 import { DbzModule } from './modules/dbz/dbz.module';
+import { SharedModule } from './modules/shared/shared.module';
+import { GifsModule } from './modules/gifs/gifs.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { DbzModule } from './modules/dbz/dbz.module';
     AppRoutingModule,
     CounterModule,
     HeroesModule,
-    DbzModule
+    DbzModule,
+    SharedModule,
+    GifsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
