@@ -1,4 +1,4 @@
 <div class="image-container">
-  <img class="{{classCustom}} animate__animated animate__flash" [src]="imageSrc" (load)="onLoad()" [alt]="altData" />
+  <img class="{{classCustom}} animate__animated animate__fadeIn" [src]="imageSrc" (load)="onLoad()" [alt]="altData" />
   <img *ngIf="!load" class="overlay {{classCustom}}" [src]="defaultImage" alt="loading..." />
 </div>

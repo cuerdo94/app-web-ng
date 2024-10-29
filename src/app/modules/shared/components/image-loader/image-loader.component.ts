@@ -12,9 +12,7 @@ export class ImageLoaderComponent implements OnInit {
     if (this.imageSrc.length === 0) {
       throw new Error('Method not implemented.');
     }
-    if (this.altData.length != 0) {
-      this.altData = "Sin datos";
-    }
+
   }
 
   @Input() imageSrc: string = '';
@@ -23,9 +21,12 @@ export class ImageLoaderComponent implements OnInit {
   defaultImage: string = '/assets/images/loading.webp';
   load: boolean = false;
 
+  private isLoaded: boolean = false;
+
   onLoad() {
-    // setTimeout(() => {
+    if (!this.isLoaded) {
       this.load = true;
-    // }, 500)
+      this.isLoaded = true;  // Cambia la bandera para evitar futuras ejecuciones
+    }
   }
 }

@@ -70,7 +70,7 @@ export class GifsService {
 
       this.saveGifs = resp.data.map((gif: GifResponse) => ({
         id: gif.id,
-        title: gif.title,
+        title: gif.title || 'Sin datos',
         url: gif.url,
         embedUrl: gif.embed_url,
         imageUrl: gif.images.original.url,
