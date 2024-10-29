@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GifsService } from '../../services/gifs.service';
+import { Gif } from '../../interfaces/gif.interface';
 
 @Component({
   selector: 'gifs-list',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
+  constructor(private gifsService: GifsService) {
+
+  }
+
+  get gifs(): Gif[] {
+    return this.gifsService.gifs;
+  }
 
 }
