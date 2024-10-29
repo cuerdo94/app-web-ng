@@ -2,9 +2,7 @@ export interface Gif {
   id: string,
   title: string,
   url: string,
-  embedUrl: string,
   imageUrl: string,
-  fixedHeightUrl: string,
 }
 
 export interface GifResponse {

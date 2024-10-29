@@ -18,7 +18,6 @@ export class FormComponent {
 
 
   submitForm(): void {
-    console.log(this.charact);
     this.onNewCharacter.emit(this.charact);
     this.charact = { name: "", power: 0 };
   }

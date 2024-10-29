@@ -8,11 +8,12 @@ import { HeroesModule } from './modules/heroes/heroes.module';
 import { DbzModule } from './modules/dbz/dbz.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { GifsModule } from './modules/gifs/gifs.module';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,

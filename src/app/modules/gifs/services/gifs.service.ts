@@ -68,7 +68,6 @@ export class GifsService {
 
     this.httpCliente.get<ApiResponse>(`${this.urlbase}v1/gifs/search`, { params }).subscribe((resp) => {
 
-      console.log(resp);
       this.saveGifs = resp.data.map((gif: GifResponse) => ({
         id: gif.id,
         title: gif.title,
@@ -79,7 +78,6 @@ export class GifsService {
       }));
     });
 
-    console.log(this._gifsResult);
   }
 
   public get gifs(): Gif[] {

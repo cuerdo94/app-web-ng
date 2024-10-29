@@ -1,5 +1,6 @@
 <div class="card bg-dark" style="max-width: 18rem;">
-  <img src="{{gif.imageUrl}}" class="card-img-top img-fluid card-img-limited" alt="...">
+  <app-image-loader [imageSrc]="gif.imageUrl" [altData]="gif.title"
+    [classCustom]="'card-img-top img-fluid card-img-limited '"></app-image-loader>
   <div class="card-body text-white">
     <p class="card-text card-text-limited">
       {{gif.title}}
