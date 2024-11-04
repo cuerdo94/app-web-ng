@@ -1,13 +1,19 @@
-<div>
-  <div class="card">
-    <div class="card-body">
-      <app-certificados></app-certificados>
+<div class="container mt-3">
+  <div class="row">
+    <!-- Columna izquierda: Selector de Plantillas -->
+    <div class="col-4 selector-column">
+      <app-certificados (templateSelected)="onTemplateSelected($event)"></app-certificados>
+      <div class="d-flex justify-content-end">
+        <button (click)="printTemplate()" class="btn btn-primary mt-3" *ngIf="selectedTemplate">
+          Imprimir Certificado
+        </button>
+      </div>
+
+    </div>
+    <div class="col-8 preview-column">
+      <app-certificado-1 *ngIf="selectedTemplate === 'plantilla1'" id="plantilla1"></app-certificado-1>
+      <app-certificado-2 *ngIf="selectedTemplate === 'plantilla2'" id="plantilla2"></app-certificado-2>
+      <app-certificado-3 *ngIf="selectedTemplate === 'plantilla3'" id="plantilla3"></app-certificado-3>
     </div>
   </div>
-</div>
-
-<div>
-  <app-certificado-1></app-certificado-1>
-  <app-certificado-2></app-certificado-2>
-  <app-certificado-3></app-certificado-3>
 </div>

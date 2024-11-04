@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CertificadosService } from '../../services/certificados.service';
 
 @Component({
@@ -8,26 +8,31 @@ import { CertificadosService } from '../../services/certificados.service';
 })
 export class CertificadosComponent {
 
+  @Output() templateSelected = new EventEmitter<string>();
 
-  template = '';
-  filledTemplate = '';
-
-  constructor(private templateService: CertificadosService) { }
-
-  loadTemplate(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const name = input?.value || '';
-    console.log(name);
-    // this.template = this.templateService.getTemplate(name);
-    // this.filledTemplate = this.template; // Inicialmente sin datos
+  loadTemplate(event: Event): void {
+    const selectedTemplate = (event.target as HTMLSelectElement).value;
+    this.templateSelected.emit(selectedTemplate);
   }
+  // template = '';
+  // filledTemplate = '';
 
-  fillTemplate(parameters: { [key: string]: any }) {
-    this.filledTemplate = this.templateService.fillTemplate(this.template, parameters);
-  }
+  // constructor(private templateService: CertificadosService) { }
 
-  printTemplate() {
-    window.print();
-  }
+  // loadTemplate(event: Event) {
+  //   const input = event.target as HTMLInputElement;
+  //   const name = input?.value || '';
+  //   console.log(name);
+  //   // this.template = this.templateService.getTemplate(name);
+  //   // this.filledTemplate = this.template; // Inicialmente sin datos
+  // }
+
+  // fillTemplate(parameters: { [key: string]: any }) {
+  //   this.filledTemplate = this.templateService.fillTemplate(this.template, parameters);
+  // }
+
+  // printTemplate() {
+  //   window.print();
+  // }
 
 }
