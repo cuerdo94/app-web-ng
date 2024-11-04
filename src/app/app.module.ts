@@ -9,6 +9,7 @@ import { DbzModule } from './modules/dbz/dbz.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { GifsModule } from './modules/gifs/gifs.module';
 import { provideHttpClient } from '@angular/common/http';
+import { TemplateModule } from './modules/template/template.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { provideHttpClient } from '@angular/common/http';
     HeroesModule,
     DbzModule,
     SharedModule,
-    GifsModule
+    GifsModule,
+    TemplateModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],

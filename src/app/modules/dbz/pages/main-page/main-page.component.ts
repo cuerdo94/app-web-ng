@@ -16,7 +16,7 @@ export class MainPageComponent {
   get characters(): Character[] {
     return this.dbzService.characters;
   }
-  
+
   onDelete(i: number) {
     this.dbzService.onDelete(i);
   };

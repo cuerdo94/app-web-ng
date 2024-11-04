@@ -1,0 +1,9 @@
+<div class="mb-3">
+  <label for="" class="form-label">Plantilla</label>
+  <select class="form-select form-select-lg" (change)="loadTemplate($event)">
+    <option value="plantilla1">Plantilla 1</option>
+    <option value="plantilla2">Plantilla 2</option>
+    <option value="plantilla3">Plantilla 3</option>
+  </select>
+</div>
+<button (click)="printTemplate()">Imprimir</button>
