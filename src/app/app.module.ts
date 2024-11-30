@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { CounterModule } from './modules/counter/counter.module';
 import { HeroesModule } from './modules/heroes/heroes.module';
 import { DbzModule } from './modules/dbz/dbz.module';
-import { SharedModule } from './modules/shared/shared.module';
 import { GifsModule } from './modules/gifs/gifs.module';
 import { provideHttpClient } from '@angular/common/http';
 import { TemplateModule } from './modules/template/template.module';
+import { CountryModule } from './modules/country/country.module';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +23,9 @@ import { TemplateModule } from './modules/template/template.module';
     CounterModule,
     HeroesModule,
     DbzModule,
-    SharedModule,
     GifsModule,
-    TemplateModule
+    TemplateModule,
+    CountryModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent],

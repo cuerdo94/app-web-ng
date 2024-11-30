@@ -4,7 +4,8 @@ import { HomePageComponent } from './pages/home/home-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { ListComponent } from './components/list/list.component';
 import { CardComponent } from './components/card/card.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from './shared/shared.module';
+import { IndexComponent } from './pages/index/index.component';
 
 @NgModule({
   declarations: [
@@ -12,11 +13,12 @@ import { SharedModule } from '../shared/shared.module';
     SearchComponent,
     ListComponent,
     CardComponent,
+    IndexComponent
   ],
   imports: [
     CommonModule,
     SharedModule
   ],
-  exports: [HomePageComponent]
+  exports: [IndexComponent]
 })
 export class GifsModule { }
