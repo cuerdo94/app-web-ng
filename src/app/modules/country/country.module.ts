@@ -4,6 +4,10 @@ import { SharedCountryModule } from './shared/shared.module';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { SharedModule } from "../gifs/shared/shared.module";
 import { AppRoutingCountryModule } from './app-routing.module';
+import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.component';
+import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
+import { ByCapitalPageComponent } from './pages/by-capital-page/by-capital-page.component';
+import { CountryPageComponent } from './pages/country-page/country-page.component';
 
 
 
@@ -11,7 +15,10 @@ import { AppRoutingCountryModule } from './app-routing.module';
 @NgModule({
   declarations: [
     CountriesComponent,
-  ],
+    ByCountryPageComponent,
+    ByRegionPageComponent,
+    ByCapitalPageComponent,
+    CountryPageComponent],
   imports: [
     CommonModule,
     SharedCountryModule,
@@ -19,7 +26,8 @@ import { AppRoutingCountryModule } from './app-routing.module';
     AppRoutingCountryModule
   ],
   exports: [
-    CountriesComponent
+    CountriesComponent,
+   
   ]
 
 })
