@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SharedCountryModule } from './shared/shared.module';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { SharedModule } from "../gifs/shared/shared.module";
+import { AppRoutingCountryModule } from './app-routing.module';
+
 
 
 
@@ -13,8 +15,9 @@ import { SharedModule } from "../gifs/shared/shared.module";
   imports: [
     CommonModule,
     SharedCountryModule,
-    SharedModule
-],
+    SharedModule,
+    AppRoutingCountryModule
+  ],
   exports: [
     CountriesComponent
   ]

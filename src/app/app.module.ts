@@ -18,8 +18,8 @@ import { CountryModule } from './modules/country/country.module';
 
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     CounterModule,
     HeroesModule,
     DbzModule,
