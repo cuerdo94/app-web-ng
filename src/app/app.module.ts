@@ -10,14 +10,15 @@ import { GifsModule } from './modules/gifs/gifs.module';
 import { provideHttpClient } from '@angular/common/http';
 import { TemplateModule } from './modules/template/template.module';
 import { CountryModule } from './modules/country/country.module';
+import { TimelineComponent } from './modules/components/timeline/timeline.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
+    TimelineComponent,
     AppRoutingModule,
     BrowserModule,
     CounterModule,

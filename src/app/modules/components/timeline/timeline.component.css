@@ -1,0 +1,51 @@
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dee2e6;
+  z-index: 1;
+}
+
+.timeline-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-content {
+  margin-left: 1.5rem;
+}
+
+.timeline-content h6 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
