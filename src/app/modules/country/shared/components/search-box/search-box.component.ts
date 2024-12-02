@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class SearchBoxComponent {
   @Input() placeholder: string = "";
   @Output()
-  onNewCharacter: EventEmitter<string> = new EventEmitter<string>();
+  onValue: EventEmitter<string> = new EventEmitter<string>();
   private typingTimer: any; // Timer para manejar el retraso
   private typingDelay: number = 500; // Tiempo de espera en milisegundos (500 ms)
   public inputValue: string = ''; // Propiedad para enlazar con el input
@@ -33,7 +33,7 @@ export class SearchBoxComponent {
 
   private emit(input: string) {
     console.log(input);
-    this.onNewCharacter.emit(input);
+    this.onValue.emit(input);
     this.inputValue = '';
   }
 }

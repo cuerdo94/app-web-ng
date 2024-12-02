@@ -2,13 +2,12 @@
 <hr>
 <div class="row">
   <div class="col">
-    <country-search-box placeholder="Buscar País"></country-search-box>
+    <country-search-box (onValue)="searchByCountry($event)" placeholder="Buscar País"></country-search-box>
   </div>
 </div>
+<hr>
 <div class="row">
   <div class="col">
-    <marquee direction="">
-      Resultados
-    </marquee>
+    <shared-country-table [countries]="listCountries"></shared-country-table>
   </div>
 </div>

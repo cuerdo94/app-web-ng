@@ -1,0 +1,43 @@
+<div *ngIf="countries.length == 0" class="alert alert-warning" role="alert">
+  <strong>No hay resultados</strong>
+</div>
+
+<div *ngIf="countries.length > 0" class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead class="table-primary">
+      <tr>
+        <th>Bandera</th>
+        <th>Nombre</th>
+        <th>Población</th>
+        <th>Área (km²)</th>
+        <th>Región</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries">
+        <td>
+          <img [src]="country.flags.png" alt="Flag of {{ country.name.common }}" class="img-fluid"
+            style="width: 50px;" />
+        </td>
+        <td>
+          <strong>{{ country.name.common }}</strong><br />
+          <small class="text-muted">{{ country.name.official }}</small>
+        </td>
+        <td>{{ country.population | number }}</td>
+        <td>{{ country.area | number }}</td>
+        <td>{{ country.region }}</td>
+        <td>
+          <div class="d-grid gap-2">
+            <a [href]="country.maps.googleMaps" target="_blank" class="btn btn-outline-primary btn-sm">
+              Google Maps
+            </a>
+            <a [href]="country.maps.openStreetMaps" target="_blank" class="btn btn-outline-secondary btn-sm">
+              OpenStreetMap
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

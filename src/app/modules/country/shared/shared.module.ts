@@ -4,6 +4,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { FormsModule } from '@angular/forms';
+import { CountryTableComponent } from './components/country-table/country-table.component';
 
 
 
@@ -11,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     SidebarComponent,
     SearchBoxComponent,
+    CountryTableComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import { FormsModule } from '@angular/forms';
   exports: [
     SidebarComponent,
     SearchBoxComponent,
+    CountryTableComponent
   ]
 })
 export class SharedCountryModule { }
