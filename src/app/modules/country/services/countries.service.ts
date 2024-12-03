@@ -13,5 +13,8 @@ export class CountriesService {
   getCountries(name: string): Observable<Country[]> {
     return this.httpClient.get<Country[]>(`https://restcountries.com/v3.1/name/${name}`).pipe(catchError(error => of([])));
   }
+  getCountry(code: string): Observable<Country[]> {
+    return this.httpClient.get<Country[]>(`https://restcountries.com/v3.1/alpha/${code}`).pipe(catchError(error => of()));
+  }
 
 }
