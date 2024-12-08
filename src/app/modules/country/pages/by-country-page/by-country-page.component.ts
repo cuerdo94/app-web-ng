@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
@@ -8,16 +8,21 @@ import { debounceTime, Subject } from 'rxjs';
   selector: 'app-by-country-page',
   templateUrl: './by-country-page.component.html',
 })
-export class ByCountryPageComponent implements OnInit {
+export class ByCountryPageComponent implements OnInit, OnDestroy {
   public listCountries: Country[] = [];
   private search: Subject<string> = new Subject<string>();
   constructor(private countriesService: CountriesService) { }
-  
+
   ngOnInit(): void {
     this.search.pipe(debounceTime(500))
       .subscribe((country: string) => this._searchByCountry(country));
   }
-  searchByCountry(country: string): void {
+
+  ngOnDestroy(): void {
+    this.search.unsubscribe();
+  }
+
+  public searchByCountry(country: string): void {
     this.search.next(country);
   }
 
