@@ -9,10 +9,10 @@ import { switchMap } from 'rxjs';
   templateUrl: './country-page.component.html',
 })
 export class CountryPageComponent implements OnInit {
-  listCountries: Country[] = [];
-  constructor(private countriesService: CountriesService, private activated: ActivatedRoute) {
+  public listCountries: Country[] = [];
 
-  }
+  constructor(private countriesService: CountriesService, private activated: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.activated.params.pipe(
       switchMap(({ id }) => this.countriesService.getCountry(id))
@@ -21,9 +21,4 @@ export class CountryPageComponent implements OnInit {
     });
   }
 
-  private searchByCountry(country: string): void {
-    this.countriesService.getCountry(country).subscribe((countries: Country[]) => {
-      this.listCountries = countries;
-    });
-  }
 }
